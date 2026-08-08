@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "Routinely",
+    "slug": "routinely",
+    "version": "1.2.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/logo2.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#FFFFFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yourschool.classapp",
+      "newArchEnabled": false
+    },
+    "android": {
+      "minSdkVersion": 21,
+      "newArchEnabled": false,
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.yourschool.classapp"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/logo2.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#FFFFFF"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "767c6121-cfd9-4a06-9fac-ee7010d769b5"
+      }
+    }
+  }
+}

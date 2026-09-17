@@ -138,11 +138,13 @@ export default function RepExamScreen({ session }: Props) {
 
       {/* Add/Edit Modal */}
       <Modal visible={showModal} transparent animationType="slide">
-        <KeyboardAvoidingView style={styles.modal}behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        keyboardVerticalOffset={Platform.OS === 'ios' ? 40: 0}>
+          <KeyboardAvoidingView behavior={Platform.OS === 'ios'?'padding' : 'height'} style={{flex:1}}>
+             <ScrollView keyboardShouldPersistTaps="handled" >
         <View style={styles.modal}>
-          <ScrollView keyboardShouldPersistTaps="handled" >
+              
+              
             <View style={styles.modalCard}>
+             
               <Text style={styles.modalTitle}>{editId ? 'Edit Exam' : 'New Exam'}</Text>
 
               {/* Exam type selector */}
@@ -188,10 +190,13 @@ export default function RepExamScreen({ session }: Props) {
                   <Text style={styles.saveModalText}>{editId ? 'Save Changes' : 'Add Exam'}</Text>
                 </TouchableOpacity>
               </View>
-            </View>
-          </ScrollView>
+            
+          </View>
+        
+           
         </View>
-        </KeyboardAvoidingView>
+          </ScrollView>
+          </KeyboardAvoidingView>
       </Modal>
     </View>
   );

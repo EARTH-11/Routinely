@@ -4,6 +4,7 @@ import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity, ActivityIndicator
 } from 'react-native';
 import { supabase } from '../../lib/supabase';
+import { MaterialIcons } from '@expo/vector-icons';
 import { COLORS, RADIUS, SHADOW, FONTS } from '../../constants/theme';
 
 interface Stats {
@@ -39,10 +40,10 @@ export default function AdminDashboard() {
   }
 
   const STAT_CARDS = [
-    { label: 'Batches', value: stats.batches, emoji: '📚', color: COLORS.primary },
-    { label: 'Sections', value: stats.sections, emoji: '🏷️', color: COLORS.accent },
-    { label: 'Active Reps', value: stats.reps, emoji: '👥', color: COLORS.purple },
-    { label: 'Notices', value: stats.notices, emoji: '📢', color: COLORS.warning },
+    { label: 'Batches', value: stats.batches, icon:'auto-stories', color: COLORS.primary },
+    { label: 'Sections', value: stats.sections, icon:'sell', color: COLORS.accent },
+    { label: 'Active CR', value: stats.reps, icon:'groups', color: COLORS.purple },
+    { label: 'Notices posted', value: stats.notices, icon:'campaign', color: COLORS.warning },
   ];
 
   return (
@@ -60,7 +61,7 @@ export default function AdminDashboard() {
           <View style={styles.statsGrid}>
             {STAT_CARDS.map(card => (
               <View key={card.label} style={[styles.statCard, { borderTopColor: card.color, borderTopWidth: 0}]}>
-                <Text style={styles.statEmoji}>{card.emoji}</Text>
+                <MaterialIcons name={card.icon as any} size={28} color={card.color}/>
                 <Text style={[styles.statValue, { color: card.color }]}>{card.value}</Text>
                 <Text style={styles.statLabel}>{card.label}</Text>
               </View>
@@ -68,7 +69,7 @@ export default function AdminDashboard() {
           </View>
 
           {/* Recent notices */}
-          <Text style={styles.sectionTitle}>Active Notices</Text>
+          <Text style={styles.sectionTitle}>View Notices</Text>
           {recentNotices.length === 0 ? (
             <Text style={styles.empty}>No notices posted yet</Text>
           ) : (

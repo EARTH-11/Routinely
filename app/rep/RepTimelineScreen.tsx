@@ -155,9 +155,10 @@ export default function RepTimelineScreen({ session }: Props) {
 
       {/* Add/Edit Modal */}
       <Modal visible={showModal} transparent animationType="slide">
-        <View style={styles.modal}>
-         <KeyboardAvoidingView behavior={Platform.OS === 'ios'?'padding' : 'height'} style={{flex:1}}>
-          <ScrollView contentContainerStyle={styles.modalCard} keyboardShouldPersistTaps="handled">
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios'?'padding' : 'height'} style={{flex:1}}>
+          <ScrollView keyboardShouldPersistTaps="handled">
+         <View style={styles.modal}>
+         
             <View style={styles.modalCard}>
               <Text style={styles.modalTitle}>{editId ? 'Edit Class' : 'New Class'}</Text>
 
@@ -232,9 +233,10 @@ export default function RepTimelineScreen({ session }: Props) {
                 </TouchableOpacity>
               </View>
             </View>
-          </ScrollView>
-         </KeyboardAvoidingView>
-        </View>
+          
+         </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
       </Modal>
     </View>
   );

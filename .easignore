@@ -4,3 +4,5 @@ ios/
 .expo/
 .git/
 *.log
+.env 
+.env*

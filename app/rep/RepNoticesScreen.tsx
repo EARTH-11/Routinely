@@ -3,6 +3,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
   TextInput, Alert, ActivityIndicator, Modal, Switch,
+  KeyboardAvoidingView, Platform,
 } from 'react-native';
 import { supabase } from '../../lib/supabase';
 import { COLORS, RADIUS, SHADOW, FONTS } from '../../constants/theme';
@@ -165,9 +166,9 @@ export default function RepNoticesScreen({ session }: Props) {
 
       {/* Add/Edit Modal */}
       <Modal visible={showModal} transparent animationType="slide">
-        <View style={styles.modal}>
-           
-          
+         <ScrollView keyboardShouldPersistTaps="handled" >
+         <View style={styles.modal}>
+
             <View style={styles.modalCard}>
               <Text style={styles.modalTitle}>{editId ? 'Edit Notice' : 'New Notice'}</Text>
 
@@ -231,9 +232,9 @@ export default function RepNoticesScreen({ session }: Props) {
                 </TouchableOpacity>
               </View>
             </View>
-         
-         
+
         </View>
+      </ScrollView>
       </Modal>
     </View>
   );

@@ -42,9 +42,8 @@ export default function AdminProfileScreen() {
           {[
             '✅ Add / remove batches',
             '✅ Add / remove sections',
-            '✅ Manage section reps',
-            '✅ Edit all schedules',
-            '✅ Post notices to any section',
+            '✅ Add / remove sections representatives',
+            '✅ View all section notice',
             '✅ Manage bus schedule',
           ].map(item => (
             <Text key={item} style={styles.permItem}>{item}</Text>

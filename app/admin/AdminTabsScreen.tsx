@@ -15,8 +15,8 @@ const Tab = createBottomTabNavigator();
 type MaterialIconName = React.ComponentProps<typeof MaterialIcons>['name'];
 
 const TAB_ICONS: Record<string, MaterialIconName> = {
-  Overview: 'dashboard',
-  Batches: 'school',
+  Overview: 'grid-view',
+  Batches: 'account-tree',
   Reps: 'group',
   Bus: 'directions-bus',
   Logout: 'logout',
